@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibrasSkater - Skate & Acessibilidade</title>
-    
+
     <!-- Ícones (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Fonte Inter e Tailwind CSS (para agilizar o visual bonito) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Configuração da Cor Personalizada no Tailwind -->
     <script>
         tailwind.config = {
@@ -33,12 +34,38 @@
             font-family: 'Drunken Hour';
             src: url('font/DrunkenHourDEMO-Regular.woff2') format('woff2');
         }
+
+        .daniel {
+            display: flex;
+        }
+
+        .person-img {
+            opacity: 0;
+            width: 0px;
+
+            height: 0px;
+        }
+
+        .hover:hover .person-img {
+            opacity: 1;
+            width: 8rem;
+            height: 8rem;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+
+        .caixa:hover {
+
+            transition: height 0.5s ease-in-out;
+
+        }
     </style>
 
     <!-- ESTILOS PERSONALIZADOS (CSS) -->
     <link rel="stylesheet" href="src/style.css">
     <!-- Se fosse separado, isso iria no arquivo style.css -->
 </head>
+
 <body class="bg-gray-50 text-gray-900 antialiased">
 
     <!-- CABEÇALHO / MENU -->
@@ -47,8 +74,9 @@
             <!-- Logo -->
             <div class="flex items-center gap-2">
                 <div class="bg-roxo text-white p-2 font-black text-2xl tracking-tighter transform -skew-x-12 flex items-center gap-2"
-                style="font-family: 'Drunken Hour',sans-serif;">
-                    <div class="tracking-wider">Librasskater</div> <!-- <img src="img/Librasskate_logo.png" alt="LibrasSkater Logo" class="w-12 h-auto"> -->
+                    style="font-family: 'Drunken Hour',sans-serif;">
+                    <div class="tracking-wider">Librasskater</div>
+                    <!-- <img src="img/Librasskate_logo.png" alt="LibrasSkater Logo" class="w-12 h-auto"> -->
                 </div>
             </div>
 
@@ -58,7 +86,8 @@
                 <a href="#historia" class="hover:text-roxo transition-colors">História</a>
                 <a href="#projeto" class="hover:text-roxo transition-colors">Oficina</a>
                 <a href="#equipe" class="hover:text-roxo transition-colors">Equipe</a>
-                <a href="#contato" class="bg-roxo text-white px-4 py-2 hover:bg-white hover:text-black transition-all transform hover:-translate-y-1">Contato</a>
+                <a href="#contato"
+                    class="bg-roxo text-white px-4 py-2 hover:bg-white hover:text-black transition-all transform hover:-translate-y-1">Contato</a>
             </nav>
 
             <!-- Botão Mobile -->
@@ -81,28 +110,37 @@
 
     <main>
         <!-- SEÇÃO HERO (INÍCIO) -->
-        <section id="home" class="relative min-h-screen flex items-center justify-center bg-zinc-900 overflow-hidden pt-20">
+        <section id="home"
+            class="relative min-h-screen flex items-center justify-center bg-zinc-900 overflow-hidden pt-20">
             <!-- Imagem de fundo com sobreposição -->
-            <div class="absolute inset-0 opacity-20 bg-[url('img/Librasskate_logo.png')] bg-cover bg-center bg-fixed mix-blend-luminosity"></div>
+            <div
+                class="absolute inset-0 opacity-20 bg-[url('img/Librasskate_logo.png')] bg-cover bg-center bg-fixed mix-blend-luminosity">
+            </div>
             <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-zinc-900"></div>
-            
+
             <div class="container mx-auto px-4 relative z-10 text-center md:text-left fade-in">
-                <div class="inline-block mb-4 px-3 py-1 bg-roxo text-white font-bold uppercase text-xs tracking-widest transform -rotate-2 m-5">
+                <div
+                    class="inline-block mb-4 px-3 py-1 bg-roxo text-white font-bold uppercase text-xs tracking-widest transform -rotate-2 m-5">
                     Skate • Cultura • Inclusão
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
-                    O Skate <br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-roxo to-roxoEscuro">Salva &</span> <br/>
+                <h1
+                    class="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
+                    O Skate <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-roxo to-roxoEscuro">Salva &</span>
+                    <br />
                     Une!
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10 font-light border-l-4 border-roxo pl-6">
                     Diversificando a cena do skate com inclusão e cultura. A língua brasileira de sinais sobre rodas.
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 mb-4">
-                    <a href="#projeto" class="group bg-roxo text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2">
-                        Ver Proposta <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    <a href="#projeto"
+                        class="group bg-roxo text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2">
+                        Ver Proposta <i data-lucide="arrow-right"
+                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#contato" class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all text-center">
+                    <a href="#contato"
+                        class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all text-center">
                         Fale Conosco
                     </a>
                 </div>
@@ -119,25 +157,31 @@
                             Como tudo <span class="text-roxo">começou</span>
                         </h2>
                         <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                            O nome <strong>LibrasSkater</strong> surgiu com Daniel Gonçalves durante uma viagem para o <strong>GCA 24 (Goiânia Crew Attack 24)</strong>.
+                            O nome <strong>LibrasSkater</strong> surgiu com Daniel Gonçalves durante uma viagem para o
+                            <strong>GCA 24 (Goiânia Crew Attack 24)</strong>.
                         </p>
                         <p class="text-gray-600 mb-4">
-                            Daniel correu o campeonato com sua crew de apenas duas pessoas, junto ao seu amigo Victor (skatista surdo vertical de Goiânia). Sozinhos, alcançaram a 19ª colocação, mas o impacto foi muito maior que o resultado.
+                            Daniel correu o campeonato com sua crew de apenas duas pessoas, junto ao seu amigo Victor
+                            (skatista surdo vertical de Goiânia). Sozinhos, alcançaram a 19ª colocação, mas o impacto
+                            foi muito maior que o resultado.
                         </p>
                         <p class="text-gray-600 border-l-4 border-roxo pl-4 italic">
-                            "Daniel atuou como intérprete de Libras nas baterias, apoiando Victor enquanto ele aguardava sua vez para manobrar. Ali nasceu a missão: promover fortemente a LIBRAS na cena do skate."
+                            "Daniel atuou como intérprete de Libras nas baterias, apoiando Victor enquanto ele aguardava
+                            sua vez para manobrar. Ali nasceu a missão: promover fortemente a LIBRAS na cena do skate."
                         </p>
                     </div>
                     <div class="md:w-1/2 grid grid-cols-2 gap-4">
                         <div class="bg-zinc-100 p-6 border-b-4 border-roxo hover:-translate-y-2 transition-transform">
                             <i data-lucide="flag" class="w-10 h-10 mb-4 text-roxo"></i>
                             <h3 class="font-bold uppercase mb-2">Missão</h3>
-                            <p class="text-sm text-gray-600">Tornar o esporte acessível a todos, independente da forma como se comunicam.</p>
+                            <p class="text-sm text-gray-600">Tornar o esporte acessível a todos, independente da forma
+                                como se comunicam.</p>
                         </div>
                         <div class="bg-zinc-100 p-6 border-b-4 border-roxo hover:-translate-y-2 transition-transform">
                             <i data-lucide="users" class="w-10 h-10 mb-4 text-roxo"></i>
                             <h3 class="font-bold uppercase mb-2">Comunidade</h3>
-                            <p class="text-sm text-gray-600">Elevar a voz da comunidade surda dentro do universo do skate.</p>
+                            <p class="text-sm text-gray-600">Elevar a voz da comunidade surda dentro do universo do
+                                skate.</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +193,8 @@
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
                     <span class="text-roxo font-bold uppercase tracking-widest text-sm">Oficina Educativa</span>
-                    <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4 uppercase tracking-tighter">Libras e Skate: <br/>Desenhando a Comunicação</h2>
+                    <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4 uppercase tracking-tighter">Libras e Skate:
+                        <br />Desenhando a Comunicação</h2>
                     <div class="w-24 h-2 bg-roxo mx-auto"></div>
                 </div>
 
@@ -160,29 +205,40 @@
                         </h3>
                         <ul class="space-y-4 text-gray-300">
                             <li class="flex items-start gap-3">
-                                <span class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">1</span>
+                                <span
+                                    class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">1</span>
                                 <p><strong>Duração:</strong> 1 hora de imersão total.</p>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">2</span>
-                                <p><strong>Arte & Skate:</strong> Participantes criam desenhos inspirados no universo do skate (manobras, pistas, emoções).</p>
+                                <span
+                                    class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">2</span>
+                                <p><strong>Arte & Skate:</strong> Participantes criam desenhos inspirados no universo do
+                                    skate (manobras, pistas, emoções).</p>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">3</span>
-                                <p><strong>Conexão com Libras:</strong> Educadores ensinam os sinais em Libras relacionados aos elementos desenhados.</p>
+                                <span
+                                    class="bg-roxo text-white w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0">3</span>
+                                <p><strong>Conexão com Libras:</strong> Educadores ensinam os sinais em Libras
+                                    relacionados aos elementos desenhados.</p>
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h3 class="text-2xl font-bold uppercase mb-4 text-white">Objetivos</h3>
                         <p class="text-gray-400 mb-6">
-                            Mostrar que a comunicação vai além das palavras. Libras, desenho e skate compartilham a mesma essência: expressar liberdade, movimento e identidade.
+                            Mostrar que a comunicação vai além das palavras. Libras, desenho e skate compartilham a
+                            mesma essência: expressar liberdade, movimento e identidade.
                         </p>
                         <div class="flex gap-4 flex-wrap">
-                            <span class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Público: Todas as idades</span>
-                            <span class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Inclusão Lúdica</span>
-                            <span class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Arte Visual</span>
+                            <span
+                                class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Público:
+                                Todas as idades</span>
+                            <span
+                                class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Inclusão
+                                Lúdica</span>
+                            <span class="px-3 py-1 bg-zinc-800 text-sm border border-roxo rounded-full text-roxo">Arte
+                                Visual</span>
                         </div>
                     </div>
                 </div>
@@ -196,64 +252,85 @@
                     Equipe <span class="text-roxo">LibrasSkater</span>
                 </h2>
                 <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-                    Esta equipe representa o futuro da inclusão no skate brasileiro, misturando talento, identidade e representatividade.
+                    Esta equipe representa o futuro da inclusão no skate brasileiro, misturando talento, identidade e
+                    representatividade.
                 </p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     <!-- Cards dos membros gerados via HTML para facilidade -->
-                    
+
                     <!-- Card 1 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Daniel Gonçalves</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Fundador & Skatista</p>
-                        <p class="text-sm text-gray-500">Skatista amador, modelo e organizador.</p>
+                    <div
+                        class="card bg-white p-6 shadow-sm hover:shadow-xl transition-all border-zinc-200 border-l-4 hover:border-roxo group">
+                        <div class="hover flex">
+                            <div class="column">
+                                <h3 class=" font-bold text-lg text-zinc-900 uppercase">Daniel Gonçalves</h3>
+                                <p class="text-xs text-roxo font-bold uppercase mb-2">Fundador & Skatista</p>
+                                <p class="text-sm text-gray-500">Skatista amador, modelo e organizador.</p>
+                            </div>
+                            <img src="img/Daniel.jpg" alt="Daniel Gonçalves" class="person-img bg-black rounded-xl ml-4">
+                        </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Pedro Henrique</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Comunicador e Músico.</p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Bruno Henrique</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Comunicador e Palestrante.</p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Igor Reis</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Desingner e Informática.</p>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Mateus Requião</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">VideoMaker</p>
-                        <p class="text-sm text-gray-500">Skatista surdo e Comunicador.</p>
-                    </div>
 
                     <!-- Card 6 -->
-                    <div class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
                         <h3 class="font-bold text-lg text-zinc-900 uppercase">Victor PV</h3>
                         <p class="text-xs text-roxo font-bold uppercase mb-2">Categoria Park</p>
                         <p class="text-sm text-gray-500">Skatista Surdo.</p>
                     </div>
 
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Bruno Henrique</h3>
+                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
+                        <p class="text-sm text-gray-500">Comunicador e Palestrante.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Igor Reis</h3>
+                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
+                        <p class="text-sm text-gray-500">Designer e Informática.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Mateus Requião</h3>
+                        <p class="text-xs text-roxo font-bold uppercase mb-2">VideoMaker</p>
+                        <p class="text-sm text-gray-500">Skatista surdo e Comunicador.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Pedro Henrique</h3>
+                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
+                        <p class="text-sm text-gray-500">Comunicador e Músico.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
+                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Cristian Tadeu</h3>
+                        <p class="text-xs text-roxo font-bold uppercase mb-2">Fotógrafo</p>
+                        <p class="text-sm text-gray-500">VideoMaker e Fotógrafo.</p>
+                    </div>
+
+
                     <!-- Outros membros em lista compacta -->
                     <div class="bg-zinc-100 p-6 shadow-inner md:col-span-2 lg:col-span-2">
                         <h4 class="font-bold text-gray-700 uppercase mb-3">Também no time:</h4>
                         <div class="flex flex-wrap gap-2">
-                    <!--    <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Pedro Henrique</span> -->
-                            <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Bianca Rocha</span>
-                            <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Danilo França</span>
-                    <!--    <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Wagner</span> -->
-                    <!--    <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Isabelle</span> -->
-                            <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Cristian Tadeu (Fotógrafo)</span>
+                            <!--    <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Pedro Henrique</span> -->
+                            <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Bianca
+                                Rocha</span>
+                            <!--                          <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Danilo França</span> -->
+                            <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Wagner</span>
+                            <!--    <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Isabelle</span> -->
+                            <!--         <span class="px-3 py-1 bg-white rounded text-sm font-medium text-gray-600">Cristian Tadeu (Fotógrafo)</span> -->
                         </div>
                     </div>
                 </div>
@@ -262,15 +339,18 @@
 
         <!-- CONTATO -->
         <section id="contato" class="py-20 bg-black text-white relative overflow-hidden">
-             <!-- Elemento decorativo -->
-             <div class="absolute top-0 right-0 w-64 h-64 bg-roxo rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-             
+            <!-- Elemento decorativo -->
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-roxo rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2">
+            </div>
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-16">
-                    
+
                     <!-- Informações -->
                     <div class="lg:w-1/2">
-                        <h2 class="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">Entre em <span class="text-roxo">Contato</span></h2>
+                        <h2 class="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">Entre em <span
+                                class="text-roxo">Contato</span></h2>
                         <p class="text-gray-400 text-lg mb-8">
                             Quer apoiar o projeto, tirar dúvidas ou levar a oficina LibrasSkater para seu evento?
                         </p>
@@ -292,7 +372,9 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white uppercase">Instagram</h4>
-                                    <a href="https://www.instagram.com/librasskater/" target="_blank"> <p class="text-gray-400">@librasskater</p></a>
+                                    <a href="https://www.instagram.com/librasskater/" target="_blank">
+                                        <p class="text-gray-400">@librasskater</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -302,27 +384,31 @@
                     <div class="lg:w-1/2 bg-zinc-900 p-8 border border-zinc-800 shadow-2xl">
                         <form id="contactForm" class="space-y-6">
                             <div>
-                                <label for="nome" class="block text-sm font-bold uppercase text-gray-400 mb-2">Nome</label>
+                                <label for="nome"
+                                    class="block text-sm font-bold uppercase text-gray-400 mb-2">Nome</label>
                                 <input type="text" id="nome" name="nome" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="Seu nome">
                             </div>
-                            
+
                             <div>
-                                <label for="email" class="block text-sm font-bold uppercase text-gray-400 mb-2">E-mail</label>
+                                <label for="email"
+                                    class="block text-sm font-bold uppercase text-gray-400 mb-2">E-mail</label>
                                 <input type="email" id="email" name="email" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="seu@email.com">
                             </div>
-                            
+
                             <div>
-                                <label for="mensagem" class="block text-sm font-bold uppercase text-gray-400 mb-2">Mensagem</label>
+                                <label for="mensagem"
+                                    class="block text-sm font-bold uppercase text-gray-400 mb-2">Mensagem</label>
                                 <textarea id="mensagem" name="mensagem" rows="4" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="Como podemos ajudar?"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full bg-roxo text-white font-black uppercase py-4 tracking-wider hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <button type="submit"
+                                class="w-full bg-roxo text-white font-black uppercase py-4 tracking-wider hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2 cursor-pointer">
                                 Enviar Mensagem <i data-lucide="chevron-right" class="w-5 h-5"></i>
                             </button>
                         </form>
@@ -337,7 +423,8 @@
     <footer class="bg-zinc-950 text-gray-500 py-8 border-t border-zinc-900">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center items-center gap-2 mb-4">
-                <span class="font-bold text-white uppercase tracking-wider">LIBRAS<span class="text-roxo">SKATER</span></span>
+                <span class="font-bold text-white uppercase tracking-wider">LIBRAS<span
+                        class="text-roxo">SKATER</span></span>
             </div>
             <p class="text-sm">
                 &copy; 2026 LibrasSkater. Todos os direitos reservados.
@@ -351,4 +438,5 @@
 
     </script>
 </body>
+
 </html>
