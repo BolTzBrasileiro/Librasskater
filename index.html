@@ -256,68 +256,10 @@
                     representatividade.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div id="equipe-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" >
                     <!-- Cards dos membros gerados via HTML para facilidade -->
 
-                    <!-- Card 1 -->
-                    <div
-                        class="card bg-white p-6 shadow-sm hover:shadow-xl transition-all border-zinc-200 border-l-4 hover:border-roxo group">
-                        <div class="hover flex">
-                            <div class="column">
-                                <h3 class=" font-bold text-lg text-zinc-900 uppercase">Daniel Gonçalves</h3>
-                                <p class="text-xs text-roxo font-bold uppercase mb-2">Fundador & Skatista</p>
-                                <p class="text-sm text-gray-500">Skatista amador, modelo e organizador.</p>
-                            </div>
-                            <img src="img/Daniel.jpg" alt="Daniel Gonçalves" class="person-img bg-black rounded-xl ml-4">
-                        </div>
-                    </div>
-
-
-                    <!-- Card 6 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Victor PV</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Categoria Park</p>
-                        <p class="text-sm text-gray-500">Skatista Surdo.</p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Bruno Henrique</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Comunicador e Palestrante.</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Igor Reis</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Designer e Informática.</p>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Mateus Requião</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">VideoMaker</p>
-                        <p class="text-sm text-gray-500">Skatista surdo e Comunicador.</p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Pedro Henrique</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Skatista Surdo</p>
-                        <p class="text-sm text-gray-500">Comunicador e Músico.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div
-                        class="bg-white p-6 shadow-sm hover:shadow-xl transition-all border-l-4 border-zinc-200 hover:border-roxo group">
-                        <h3 class="font-bold text-lg text-zinc-900 uppercase">Cristian Tadeu</h3>
-                        <p class="text-xs text-roxo font-bold uppercase mb-2">Fotógrafo</p>
-                        <p class="text-sm text-gray-500">VideoMaker e Fotógrafo.</p>
-                    </div>
+                    <!-- OS CARDS ESTÃO SENDO CRIADOS ATRAVÉS O SRC/SCRIPT.JS -->
 
 
                     <!-- Outros membros em lista compacta -->
@@ -368,7 +310,7 @@
 
                             <div class="flex items-start gap-4">
                                 <div class="bg-zinc-800 p-3 rounded text-roxo">
-                                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                                    <i data-lucide="camera" class="w-6 h-6"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white uppercase">Instagram</h4>
@@ -382,11 +324,11 @@
 
                     <!-- Formulário HTML Simples -->
                     <div class="lg:w-1/2 bg-zinc-900 p-8 border border-zinc-800 shadow-2xl">
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm"  class="space-y-6">
                             <div>
                                 <label for="nome"
                                     class="block text-sm font-bold uppercase text-gray-400 mb-2">Nome</label>
-                                <input type="text" id="nome" name="nome" required
+                                <input type="text" id="form-nome" name="nome" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="Seu nome">
                             </div>
@@ -394,7 +336,7 @@
                             <div>
                                 <label for="email"
                                     class="block text-sm font-bold uppercase text-gray-400 mb-2">E-mail</label>
-                                <input type="email" id="email" name="email" required
+                                <input type="email" id="form-mail" name="email" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="seu@email.com">
                             </div>
@@ -402,12 +344,12 @@
                             <div>
                                 <label for="mensagem"
                                     class="block text-sm font-bold uppercase text-gray-400 mb-2">Mensagem</label>
-                                <textarea id="mensagem" name="mensagem" rows="4" required
+                                <textarea id="form-mensagem" name="mensagem" rows="4" required
                                     class="w-full bg-zinc-800 border-none p-4 text-white focus:ring-2 focus:ring-roxo outline-none transition-all placeholder-zinc-600"
                                     placeholder="Como podemos ajudar?"></textarea>
                             </div>
 
-                            <button type="submit"
+                            <button type="submit" onclick="enviarFormulario(event)"
                                 class="w-full bg-roxo text-white font-black uppercase py-4 tracking-wider hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2 cursor-pointer">
                                 Enviar Mensagem <i data-lucide="chevron-right" class="w-5 h-5"></i>
                             </button>
@@ -433,7 +375,6 @@
     </footer>
 
     <!-- SCRIPT JAVASCRIPT -->
-    <!-- Se fosse separado, isso iria no arquivo script.js -->
     <script src="src/script.js">
 
     </script>
