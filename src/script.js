@@ -142,7 +142,7 @@ async function enviarFormulario(event) {
     };
 
     // Enviando para a nossa rota do Node.js
-    const resposta = await fetch('http://localhost:80/enviar-email', {
+    const resposta = await fetch('/api/enviar-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
