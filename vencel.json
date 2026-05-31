@@ -1,8 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "**/*", "use": "@vercel/static" },
     { "src": "api/enviar-email.js", "use": "@vercel/node" }
+    
   ],
   "routes": [
     { "src": "/api/enviar-email", "dest": "/api/enviar-email.js" },
