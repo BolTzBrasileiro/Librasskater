@@ -63,7 +63,7 @@ const equipe = [
         nome: "Pedro Henrique",
         cargo: "Skatista Surdo",
         descricao: "Comunicador e Músico.",
-        imagem: "img/pedro.jpeg"
+        imagem: "img/Pedro.jpeg"
     }
     ,
     {

@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);  /* CÓDIGO DESTE API ESTÁ LOCALIZADO EM VERCEL, ADMINISTRADO POR OIGOR6162@GMAIL.COM */
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -11,8 +11,8 @@ export default async function handler(req, res) {
 
     try {
         await resend.emails.send({
-            from: 'Site Libras Skate <onboarding@resend.dev>',
-            to: 'oiginho234@gmail.com', // ← troque aqui
+            from: 'Site Libras Skate <onboarding@resend.dev>', /* Este campo a ser atualizado futuramente, em caso da oficialização do domínio */
+            to: 'oiginho234@gmail.com', // ← troque aqui se quiser trocar de receptor, normalmente o original é "librasskater@gmail.com"
             subject: `Novo contato: ${nome}`,
             html: `
                 <h3>Novo contato pelo site!</h3>
