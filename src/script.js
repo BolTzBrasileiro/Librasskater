@@ -119,55 +119,79 @@ gerarCards();
 
 // Função que seria chamada quando o formulário for enviado
 async function enviarFormulario(event) {
-    // Dados fictícios que você pegaria dos <input> do seu HTML
+    
 
-    // Seleciona o botão que disparou o evento (ou pelo ID dele)
-    const botaoEnviar = event.target.querySelector('button[type="submit"]') || event.target;
 
-    // Desabilita o botão para impedir novos cliques
-    botaoEnviar.disabled = true;
-    botaoEnviar.innerText = "Enviando...";
 
     // Se o botão estiver dentro de uma tag <form>, isso impede a página de piscar/recarregar
+
     if (event) event.preventDefault();
     // Requirimentos de dados do formulário
     const fnome = document.getElementById('form-nome').value;
     const femail = document.getElementById('form-mail').value;
     const fmensagem = document.getElementById('form-mensagem').value;
 
-    const dadosFormulario = {
-        nome: fnome,
-        email: femail,
-        mensagem: fmensagem
-    };
+    // verificar se o input não está vazia
+    if(fnome.trim() !== "" ||femail.trim() !== "" || fmensagem.trim() !== ""){
+        const dadosFormulario = {
+            nome: fnome,
+            email: femail,
+            mensagem: fmensagem
+        };
 
-    // Enviando para a nossa rota do Node.js
-    const resposta = await fetch('/api/enviar-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dadosFormulario)
-    });
+        // Seleciona o botão que disparou o evento (ou pelo ID dele)
+        const botaoEnviar = event.target.querySelector('button[type="submit"]') || event.target;
 
-    if (resposta.ok) {
-        // 1. Muda o texto IMEDIATAMENTE para "Enviado!"
-        botaoEnviar.innerText = "Enviado!";
+        // Desabilita o botão para impedir novos cliques
+        botaoEnviar.disabled = true;
+        botaoEnviar.innerText = "Enviando...";
 
-        // Opcional: Você pode mudar a cor do botão para verde aqui, se quiser!
-        // botaoEnviar.style.backgroundColor = "green";
+        // Enviando para a nossa rota do Node.js
+        const resposta = await fetch('/api/enviar-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dadosFormulario)
+        });
 
-        // 2. Cria o cronômetro de 3 segundos (3000 milissegundos)
-        setTimeout(() => {
-            // Tudo que está aqui dentro só vai acontecer depois de 3 segundos
+        if (resposta.ok) {
+            // 1. Muda o texto IMEDIATAMENTE para "Enviado!"
+            botaoEnviar.innerText = "Enviado!";
+
+            // Opcional: Você pode mudar a cor do botão para verde aqui, se quiser!
+            // botaoEnviar.style.backgroundColor = "green";
+
+            // 2. Cria o cronômetro de 3 segundos (3000 milissegundos)
+            setTimeout(() => {
+                // Tudo que está aqui dentro só vai acontecer depois de 3 segundos
+                botaoEnviar.disabled = false;
+                botaoEnviar.innerText = "Enviar";
+
+                // Redireciona a página (se você ainda quiser fazer isso após o delay)
+            }, 3000);
+        } else {
+            alert("Erro ao enviar a mensagem.");
             botaoEnviar.disabled = false;
             botaoEnviar.innerText = "Enviar";
+        }
+    }else{
+                // Seleciona o botão que disparou o evento (ou pelo ID dele)
+        const botaoEnviar = event.target.querySelector('button[type="submit"]') || event.target;
+            // 1. Muda o texto IMEDIATAMENTE para "Preencha todos campos!!"
+            botaoEnviar.disabled = false;
+            botaoEnviar.innerText = "Preencha todos campos!";
 
-            // Redireciona a página (se você ainda quiser fazer isso após o delay)
-        }, 3000);
-    } else {
-        alert("Erro ao enviar a mensagem.");
-        botaoEnviar.disabled = false;
-        botaoEnviar.innerText = "Enviar";
+            // Opcional: Você pode mudar a cor do botão para verde aqui, se quiser!
+            // botaoEnviar.style.backgroundColor = "green";
+
+            // 2. Cria o cronômetro de 3 segundos (3000 milissegundos)
+            setTimeout(() => {
+                // Tudo que está aqui dentro só vai acontecer depois de 3 segundos
+                botaoEnviar.disabled = false;
+                botaoEnviar.innerText = "Enviar";
+
+                // Redireciona a página (se você ainda quiser fazer isso após o delay)
+            }, 3000);
     }
 }
