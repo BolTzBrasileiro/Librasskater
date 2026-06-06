@@ -13,7 +13,6 @@ export default async function handler(req, res) {
         await resend.emails.send({
             from: 'Site Libras Skate <onboarding@resend.dev>', /* Este campo a ser atualizado futuramente, em caso da oficialização do domínio */
             to: 'librasskater@gmail.com', // ← troque aqui se quiser trocar de receptor, normalmente o original é "librasskater@gmail.com"
-            cc: 'oiginho234@gmail.com',
             subject: `Novo contato: ${nome}`,
             html: `
                 <h3>Novo contato pelo site!</h3>
